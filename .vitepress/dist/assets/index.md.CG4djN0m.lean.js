@@ -1,0 +1,1 @@
+import{a5 as e,x as t,v as a}from"./chunks/framework.DTORqtLI.js";const _=JSON.parse('{"title":"","description":"","frontmatter":{"home":true},"headers":[],"relativePath":"index.md","filePath":"index.md"}'),n={name:"index.md"};function r(o,s,c,d,i,p){return a(),t("div")}const f=e(n,[["render",r]]);export{_ as __pageData,f as default};

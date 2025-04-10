@@ -1,0 +1,70 @@
+{
+  "hash": "0f533f43",
+  "configHash": "3f1075f9",
+  "lockfileHash": "01fde828",
+  "browserHash": "60595962",
+  "optimized": {
+    "vue": {
+      "src": "../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
+      "file": "vue.js",
+      "fileHash": "bf2e4054",
+      "needsInterop": false
+    },
+    "vitepress > @vue/devtools-api": {
+      "src": "../../../node_modules/@vue/devtools-api/dist/index.js",
+      "file": "vitepress___@vue_devtools-api.js",
+      "fileHash": "62df1c85",
+      "needsInterop": false
+    },
+    "vitepress > @vueuse/core": {
+      "src": "../../../node_modules/@vueuse/core/index.mjs",
+      "file": "vitepress___@vueuse_core.js",
+      "fileHash": "a57f0181",
+      "needsInterop": false
+    },
+    "element-plus": {
+      "src": "../../../node_modules/element-plus/es/index.mjs",
+      "file": "element-plus.js",
+      "fileHash": "d1767f94",
+      "needsInterop": false
+    },
+    "element-plus/es/components/message/style/css": {
+      "src": "../../../node_modules/element-plus/es/components/message/style/css.mjs",
+      "file": "element-plus_es_components_message_style_css.js",
+      "fileHash": "f925e1dc",
+      "needsInterop": false
+    },
+    "element-plus/es/components/message-box/style/css": {
+      "src": "../../../node_modules/element-plus/es/components/message-box/style/css.mjs",
+      "file": "element-plus_es_components_message-box_style_css.js",
+      "fileHash": "653a5f71",
+      "needsInterop": false
+    },
+    "highlight.js/lib/core": {
+      "src": "../../../node_modules/highlight.js/es/core.js",
+      "file": "highlight__js_lib_core.js",
+      "fileHash": "0ffe78ff",
+      "needsInterop": false
+    },
+    "highlight.js/lib/languages/javascript": {
+      "src": "../../../node_modules/highlight.js/es/languages/javascript.js",
+      "file": "highlight__js_lib_languages_javascript.js",
+      "fileHash": "bd5847ac",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-Z5MM7V3J": {
+      "file": "chunk-Z5MM7V3J.js"
+    },
+    "chunk-GWYN3LB4": {
+      "file": "chunk-GWYN3LB4.js"
+    },
+    "chunk-5WRI5ZAA": {
+      "file": "chunk-5WRI5ZAA.js"
+    },
+    "chunk-O5RSIX32": {
+      "file": "chunk-O5RSIX32.js"
+    }
+  }
+}
