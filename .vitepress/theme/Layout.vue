@@ -24,6 +24,10 @@ export default {
         setInterval(() => {
           this.i=(this.i+1)%scrolls.length
           this.scroll=scrolls[this.i]
+          let randomInt = Math.floor(Math.random() * 19260817) + 1;
+          if(randomInt === 19260817){
+            this.scroll="浣犲ソ, 涓栫晫!"
+          }
         }, 2000);
     }
 };
