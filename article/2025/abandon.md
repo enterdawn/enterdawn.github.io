@@ -1,5 +1,6 @@
 ---
 title: 放弃挣扎了
+date: 2025-01-07
 ---
 ## 放弃挣扎了
 PHP至少个人看来也是半截入土的东西了，一直计划将之前[基于WordPress的旧网站](https://enterdawn.top/old)迁移到VitePress上，但由于没有时间一直在鸽子。

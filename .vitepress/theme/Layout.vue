@@ -60,6 +60,12 @@ const open = () => {
   <div v-if="frontmatter.home">
     <ul>
         <li>
+            <a href="article/2025/v100_for_qwen25vl_finetuning.html">
+                <h2>在V100上微调Qwen2.5-VL</h2>
+                <p>只是简单微调而已，没什么技术含量</p>
+            </a>
+        </li>
+        <li>
             <a href="article/2025/abandon.html">
                 <h2>abandon</h2>
                 <p>或许放弃是一种更好的开始</p>
@@ -98,6 +104,6 @@ const open = () => {
       <div v-html="site.themeConfig.footer.copyright"></div>
       <div @click="open">友情链接：点击查看</div>
       <div>Designed by <a href="article/others/about.html">enterdawn</a></div>
-      <div>&copy;2025 enterdawn.top</div>
+      <div>&copy;2026 enterdawn.top</div>
   </div>
 </template>
