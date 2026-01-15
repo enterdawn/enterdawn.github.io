@@ -3,12 +3,18 @@ import { useData } from 'vitepress'
 
 const { site, frontmatter } = useData()
 
+import all_page_metadata  from "../../all-pages.json"
+const sortedArticles = [...all_page_metadata].sort((a, b) => {
+    return new Date(b.date) - new Date(a.date)
+})
+console.log(all_page_metadata)
 </script>
 
 <script lang="ts">
 import global from '../blogtheme.mts'
 import hljs from 'highlight.js/lib/core';
 import javascript from 'highlight.js/lib/languages/javascript';
+import '@fortawesome/fontawesome-free/css/all.min.css'
 
 const scrolls=global.blogtheme.motto
 export default {
@@ -59,42 +65,55 @@ const open = () => {
 
   <div v-if="frontmatter.home">
     <ul>
-        <li>
-            <a href="article/2025/v100_for_qwen25vl_finetuning.html">
-                <h2>在V100上微调Qwen2.5-VL</h2>
-                <p>只是简单微调而已，没什么技术含量</p>
+        <li v-for="article in sortedArticles" :key="article.url" style="margin: 16px 0; padding: 8px;">
+            <a :href="article.url" style="text-decoration: none; color: inherit;">
+                <h2 style="margin: 0 0 8px 0; font-size: 1.2em;">{{ article.title }}</h2>
+                <p style="font-size: 0.8em; margin: 0 0 8px 0;">
+                    <i class="fa-regular fa-clock" style="margin-right: 4px; font-size: 1em; color: #ffffff;"></i>
+                    {{ article.date }} | {{ article.tag }}
+                </p>
+                <!-- 注意：你的JSON里没有文章摘要，这里暂时留空或写默认值 -->
+                <p style="margin: 0; color: #ffffff;">{{ article.description }}</p>
             </a>
         </li>
-        <li>
-            <a href="article/2025/abandon.html">
-                <h2>abandon</h2>
-                <p>或许放弃是一种更好的开始</p>
-            </a>
-        </li>
-        <li>
-            <a href="article/2025/low_cost_postgraduate_entrance_examination.html">
-                <h2>低成本考研四个月上岸攻略</h2>
-                <p>虽然但是，建议不要点，大概率会浪费你的时间</p>
-            </a>
-        </li>
-        <li>
-            <a href="article/2025/raspi_gear_ds1302.html">
-                <h2>树莓派驱动舵机和DS1302时钟模块</h2>
-                <p>enterdawn想要搭建一个私有云盘，但由于enterdawn学校宿舍每天晚上11点断电，而且enterdawn的移动硬盘盒有一个物理按键，每天断电后都要按一下，所以enterdawn决定让程序去执行这些事情。</p>
-            </a>
-        </li>
+<!--        <li>-->
+<!--            <a href="article/2025/v100_for_qwen25vl_finetuning.html">-->
+<!--                <h2>在V100上微调Qwen2.5-VL</h2>-->
+<!--                <p style="font-size: 0.8em;"><i class="fa-regular fa-clock" style="margin-right: 4px; font-size: 1em; color: #ffffff;"></i>2025-10-26 | 无分类</p>-->
+<!--                <p>只是简单微调而已，没什么技术含量</p>-->
+<!--            </a>-->
+<!--        </li>-->
+<!--        <li>-->
+<!--            <a href="article/2025/abandon.html">-->
+<!--                <h2>abandon</h2>-->
+<!--                <p>或许放弃是一种更好的开始</p>-->
+<!--            </a>-->
+<!--        </li>-->
+<!--        <li>-->
+<!--            <a href="article/2025/low_cost_postgraduate_entrance_examination.html">-->
+<!--                <h2>低成本考研四个月上岸攻略</h2>-->
+<!--                <p>虽然但是，建议不要点，大概率会浪费你的时间</p>-->
+<!--            </a>-->
+<!--        </li>-->
+<!--        <li>-->
+<!--            <a href="article/2025/raspi_gear_ds1302.html">-->
+<!--                <h2>树莓派驱动舵机和DS1302时钟模块</h2>-->
+<!--                <p>enterdawn想要搭建一个私有云盘，但由于enterdawn学校宿舍每天晚上11点断电，而且enterdawn的移动硬盘盒有一个物理按键，每天断电后都要按一下，所以enterdawn决定让程序去执行这些事情。</p>-->
+<!--            </a>-->
+<!--        </li>-->
 
-        <li>
-          <a href="article/others/about.html">
-              <h2>关于我</h2>
-              <p>一些关于站长enterdawn本人的</p>
-        </a>
-        </li>
+<!--        <li>-->
+<!--          <a href="article/others/about.html">-->
+<!--              <h2>关于我</h2>-->
+<!--              <p>一些关于站长enterdawn本人的</p>-->
+<!--        </a>-->
+<!--        </li>-->
     </ul>
   </div>
   <div v-else>
-
       <div class="content">
+          <h1>{{frontmatter.title}}</h1>
+          <p style="font-size: 1.0em;"><i class="fa-regular fa-clock" style="margin-right: 4px; font-size: 1em; color: #ffffff;"></i>{{frontmatter.date}} | 无分类</p>
           <Content />
       </div>
   </div>

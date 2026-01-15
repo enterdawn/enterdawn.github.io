@@ -1,8 +1,9 @@
 ---
-title: 放弃挣扎了
-date: 2025-01-07
+title: abandon
+tag: 无分类
+description: 或许放弃是一种更好的开始
+date: "2025-01-07"
 ---
-## 放弃挣扎了
 PHP至少个人看来也是半截入土的东西了，一直计划将之前[基于WordPress的旧网站](https://enterdawn.top/old)迁移到VitePress上，但由于没有时间一直在鸽子。
 
 现在刚完成第一篇小论文，但想着之后可能还有一些事。相比较于接近于无限期的搁置，不如直接abandon，就像背单词一样，背到最后只记得第一个单词abandon。

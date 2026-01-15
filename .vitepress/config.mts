@@ -21,6 +21,8 @@ async function generateAllPagesData() {
             // 获取 frontmatter 数据
             title: post.frontmatter.title,
             date: post.frontmatter.date,
+            description:post.frontmatter.description,
+            tag:post.frontmatter.tag,
             // 你可以获取其他数据，比如分类、标签等
         }))
         // 3. 【核心步骤】过滤掉首页
@@ -33,7 +35,7 @@ async function generateAllPagesData() {
 
     // 5. 写入 public 目录，这样前端可以通过 /all-pages.json 访问
     // 确保你的 public 目录存在于 .vitepress/public
-    const outputPath = path.resolve(__dirname, '../public/all-pages.json')
+    const outputPath = path.resolve(__dirname, '../all-pages.json')
     writeFileSync(outputPath, JSON.stringify(filteredPosts))
 
     console.log('✅ 所有页面数据已生成，排除首页。')
