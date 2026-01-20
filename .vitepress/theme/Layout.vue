@@ -7,7 +7,35 @@ import all_page_metadata  from "../../all-pages.json"
 const sortedArticles = [...all_page_metadata].sort((a, b) => {
     return new Date(b.date) - new Date(a.date)
 })
-console.log(all_page_metadata)
+import { ElPagination } from 'element-plus'
+import { ref, computed } from 'vue'
+
+
+const currentPage = ref(1)
+const pageSize = ref(5)
+
+// --- 计算属性：处理切片逻辑 ---
+// 根据当前页码和每页条数，从 sortedArticles 中截取对应的数据
+const pagedArticles = computed(() => {
+  const start = (currentPage.value - 1) * pageSize.value
+  const end = start + pageSize.value
+  return sortedArticles.slice(start, end)
+})
+
+// --- 事件处理 ---
+const handleSizeChange = (val) => {
+  console.log(`每页 ${val} 条`)
+  // 改变每页条数时，通常建议回到第一页
+  currentPage.value = 1
+}
+
+const handleCurrentChange = (val) => {
+  console.log(`当前页: ${val}`)
+  // 切换页面后滚动到顶部，体验更好
+  window.scrollTo({ top: 0, behavior: 'smooth' })
+}
+import 'element-plus/theme-chalk/dark/css-vars.css'
+
 </script>
 
 <script lang="ts">
@@ -63,9 +91,10 @@ const open = () => {
     <p>{{ scroll }}<br></p>
   </div>
 
-  <div v-if="frontmatter.home">
+  <div  v-if="frontmatter.home">
+    <div class="article_list">
     <ul>
-        <li v-for="article in sortedArticles" :key="article.url" style="margin: 16px 0; padding: 8px;">
+        <li v-for="article in pagedArticles" :key="article.url" style="margin: 16px 0; padding: 8px;">
             <a :href="article.url" style="text-decoration: none; color: inherit;">
                 <h2 style="margin: 0 0 8px 0; font-size: 1.2em;">{{ article.title }}</h2>
                 <p style="font-size: 0.8em; margin: 0 0 8px 0;">
@@ -76,6 +105,7 @@ const open = () => {
                 <p style="margin: 0; color: #ffffff;">{{ article.description }}</p>
             </a>
         </li>
+    
 <!--        <li>-->
 <!--            <a href="article/2025/v100_for_qwen25vl_finetuning.html">-->
 <!--                <h2>在V100上微调Qwen2.5-VL</h2>-->
@@ -108,7 +138,20 @@ const open = () => {
 <!--              <p>一些关于站长enterdawn本人的</p>-->
 <!--        </a>-->
 <!--        </li>-->
-    </ul>
+    </ul></div>
+    <div class="pagination-box">
+      <el-pagination
+        class="my-pagination"
+        v-model:current-page="currentPage"
+        v-model:page-size="pageSize"
+        :page-sizes="[5, 10, 20, 40]"
+        :background="true"
+        layout="sizes, prev, pager, next, jumper"
+        :total="sortedArticles.length"
+        @size-change="handleSizeChange"
+        @current-change="handleCurrentChange"
+      />
+    </div>
   </div>
   <div v-else>
       <div class="content">

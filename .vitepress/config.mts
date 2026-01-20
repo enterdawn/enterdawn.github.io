@@ -56,7 +56,7 @@ export default defineConfig({
         themeConfig: {
             logo: '/logo.png',
             footer: {
-                message: '<a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer"> 辽ICP备19018622号-1 </a><a href="https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=21102102000151" target="_blank" rel="noopener noreferrer">     辽公网安备 21102102000151号</a>',
+                message: '<a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer"> 辽ICP备19018622号-1 </a><img src="//img.alicdn.com/tfs/TB1..50QpXXXXX7XpXXXXXXXXXX-40-40.png" style="width:15px" /><a href="https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=21102102000151" target="_blank" rel="noopener noreferrer">     辽公网安备 21102102000151号</a>',
                 copyright: '<a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" style="display:flex;align-items:center;justify-content:center;"> 本网站由<img src="/pic/2024/uplogo.webp" width="59px" height="30px" />提供cdn加速/云存储服务</a>'
             }
         },

@@ -49,8 +49,8 @@ body {
   color: pink; /* 悬停时链接颜色变化 */
 }
 
-/* 文章列表样式 */
-ul {
+
+.article_list ul {
   list-style: none;
   padding: 0;
   width: 80%;
@@ -63,19 +63,19 @@ ul {
 
 }
 
-ul li {
+.article_list ul li {
   background: #333333; /* 列表项背景颜色设置为深灰色 */
   margin-bottom: 15px;
   padding: 15px;
   border-radius: 5px;
 }
 
-ul li a{
+.article_list ul li a{
   color: white; /* 文章链接颜色 */
   text-decoration: none;
 }
 
-ul li a:hover {
+.article_list ul li a:hover {
   color: #ffffff; /* 悬停时文章链接颜色变化 */
 }
 
@@ -150,3 +150,65 @@ ul li a:hover {
   font-family: 'Arial', sans-serif;
 }
 
+
+.pagination-box {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+.my-pagination .el-pagination__pager {
+  /* 确保容器高度与其他按钮一致 */
+  height: 32px;
+  /* 统一垂直对齐方式 */
+  display: flex;
+  align-items: center;
+}
+
+/* 覆盖 el-pager 内部的页码按钮（数字按钮） */
+.my-pagination .el-pagination__pager .el-pagination__button {
+  /* 精确控制 padding，确保高度一致 */
+  padding: 0 12px;
+  /* 确保高度与其他按钮完全一致 */
+  height: 32px;
+  /* 去掉默认阴影，避免视觉凹陷 */
+  box-shadow: none !important;
+  /* 调整边框，与 dark 模式背景融合 */
+  border: 1px solid #555;
+  /* 背景色与 dark 模式背景一致 */
+  background-color: #333;
+  /* 确保内边距不影响高度 */
+  box-sizing: border-box;
+}
+
+/* 当前页码按钮（蓝色高亮） */
+.my-pagination .el-pagination__pager .el-pagination__button.is-active {
+  box-shadow: none !important;
+  border-color: #409EFF;
+  background-color: #409EFF;
+}
+
+/* 禁用状态（如第一页的“上一页”） */
+.my-pagination .el-pagination__pager .el-pagination__button.is-disabled {
+  box-shadow: none !important;
+  border-color: #666;
+  background-color: #444;
+  color: #999;
+}
+
+/* 鼠标悬停效果（非禁用状态） */
+.my-pagination .el-pagination__pager .el-pagination__button:hover:not(.is-disabled) {
+  box-shadow: none !important;
+  border-color: #666;
+  background-color: #444;
+}
+
+/* 确保所有按钮（包括非 pager 按钮）高度一致 */
+.my-pagination .el-pagination__button {
+  height: 32px;
+  padding: 0 12px;
+  box-sizing: border-box;
+}
+
+
+    
